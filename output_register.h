@@ -2,7 +2,7 @@
 * output_register.h
 *
 * Created: 18/10/2020 2:26:34
-* Author: Spiros Makris
+* Author: Spiros
 */
 
 
@@ -31,7 +31,10 @@ class output_register
 	
 	//functions
 	public:
-	output_register();
+	output_register()
+	{
+		
+	}
 	output_register(volatile uint8_t *PORT_L, uint8_t pin_l, volatile uint8_t *PORT_C,uint8_t pin_c,
 	volatile uint8_t *PORT_D, uint8_t pin_d)
 	{
@@ -66,6 +69,13 @@ class output_register
 		write_latch(0);
 		status = message;
 	}
+	
+	~output_register()
+	{
+		
+	}
+	protected:
+	private:
 	//Write bit value to latch pin
 	void write_latch(uint8_t bit)
 	{
@@ -102,10 +112,6 @@ class output_register
 			*PORT_DATA&=_BV(pin_data);
 		}
 	}
-	~output_register();
-	protected:
-	private:
-
 	
 	output_register( const output_register &c );
 	output_register& operator=( const output_register &c );
