@@ -2,7 +2,7 @@
 * output_register.h
 *
 * Created: 18/10/2020 2:26:34
-* Author: Spiros
+* Author: Spiros Makris
 */
 
 
